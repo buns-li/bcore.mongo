@@ -1,0 +1,18 @@
+{
+
+    "ModelName":{
+
+        "action":"get | insert | update | delete "
+
+        "collection":"",
+
+        "fields":[],
+
+        "where":{
+
+
+        }
+
+    }
+
+}

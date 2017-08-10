@@ -1,0 +1,29 @@
+{
+    "name": "bcore.mongo",
+    "version": "1.0.0",
+    "description": "a mongodb server which belongs to bcore.minisrv",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "mocha test/test-*.js"
+    },
+    "keywords": [
+        "bcore",
+        "mongo",
+        "mongoose"
+    ],
+    "engines": {
+        "node": ">=7.10.0"
+    },
+    "author": {
+        "name": "buns_zpli",
+        "email": "zpli_buns@126.com"
+    },
+    "license": "Apache-2.0",
+    "dependencies": {
+        "bcore": "^1.0.0",
+        "mongoose": "^4.10.7"
+    }
+}
