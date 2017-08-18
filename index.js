@@ -9,9 +9,9 @@ const path = require('path')
 const buckets = {}
 
 bcore.on('mongo', {
-    host: 'localhost',
-    database: 'test',
-    port: 27017,
+    host: process.env.BCORE_MONGO_HOST || '127.0.0.1',
+    port: process.env.BCORE_MONGO_PORT || 27017,
+    database: process.env.BCORE_MONGO_DATABASE || 'test',
     version: 'v1'
 }, function() {
 
@@ -48,9 +48,6 @@ bcore.on('mongo', {
 
         Mongoose.connection.on('error', options.errorFn || console.error.bind(console, 'connection error:'))
 
-        //提供手动生成ObjectId的方法
-        this.Id = Mongoose.Types.ObjectId
-
         //创建连接
         if (options.schemaDefineRoot) {
 
@@ -72,4 +69,7 @@ bcore.on('mongo', {
             }
         }
     }
+
+    //提供手动生成ObjectId的方法
+    this.Id = Mongoose.Types.ObjectId
 })
